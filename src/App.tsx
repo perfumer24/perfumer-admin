@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import NavBar from "./NavBar";
-import AuthPage from "./AuthPage";
+import NavBar from "./components/NavBar";
+import AuthPage from "./pages/AuthPage";
 
 export default function App() {
   // 로그인 여부에 따라 login vs Outlet
