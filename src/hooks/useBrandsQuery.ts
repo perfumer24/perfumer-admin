@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Brand } from "../types/database";
-import { getBrands } from "../queries/getBrands";
+import { Brand } from "@/types/database";
+import { getBrands } from "@/queries/getBrands";
 import useSupabase from "./useSupabase";
 
 function useBrandsQuery() {

@@ -1,5 +1,5 @@
 import React from "react";
-import useBrandsQuery from "../hooks/useBrandsQuery";
+import useBrandsQuery from "@/hooks/useBrandsQuery";
 
 export default function BrandPage() {
   const { data: brands, isLoading, isError } = useBrandsQuery();
