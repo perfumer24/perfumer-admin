@@ -5,10 +5,6 @@ import { Database } from "@/types/database";
 export type Client = ReturnType<typeof createClient<Database>> | undefined;
 
 export function getSupabaseBrowserClient() {
-  if (client) {
-    return client;
-  }
-
-  client = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const client = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY);
   return client;
 }
