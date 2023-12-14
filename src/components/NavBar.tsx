@@ -1,7 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 export default function NavBar() {
+  const highlight = ({ isActive }: NavLinkProps) => {
+    return {
+      color: isActive ? "red" : "inherit",
+    };
+  };
+
   return (
     <nav
       style={{
@@ -9,34 +15,19 @@ export default function NavBar() {
         justifyContent: "space-around",
       }}
     >
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/"
-      >
+      <NavLink style={highlight} to="/">
         home
       </NavLink>
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/brand"
-      >
+      <NavLink style={highlight} to="/brand">
         brand
       </NavLink>
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/mypage"
-      >
+      <NavLink style={highlight} to="/accord">
+        향조(accord)
+      </NavLink>
+      <NavLink style={highlight} to="/fragrance">
+        향료(fragrance)
+      </NavLink>
+      <NavLink style={highlight} to="/mypage">
         mypage
       </NavLink>
     </nav>
