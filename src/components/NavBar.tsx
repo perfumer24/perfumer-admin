@@ -2,6 +2,12 @@ import React from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
 export default function NavBar() {
+  const highlight = ({ isActive }: NavLinkProps) => {
+    return {
+      color: isActive ? "red" : "inherit",
+    };
+  };
+
   return (
     <nav
       style={{
@@ -9,55 +15,20 @@ export default function NavBar() {
         justifyContent: "space-around",
       }}
     >
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/"
-      >
+      <NavLink style={highlight} to="/">
         home
       </NavLink>
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/brand"
-      >
+      <NavLink style={highlight} to="/brand">
         brand
       </NavLink>
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/mypage"
-      >
-        mypage
-      </NavLink>
-      <NavLink
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/accord"
-      >
+      <NavLink style={highlight} to="/accord">
         향조(accord)
       </NavLink>
-      <NavLink
-        style={({ isActive }: NavLinkProps) => {
-          return {
-            color: isActive ? "red" : "inherit",
-          };
-        }}
-        to="/fragrance"
-      >
+      <NavLink style={highlight} to="/fragrance">
         향료(fragrance)
+      </NavLink>
+      <NavLink style={highlight} to="/mypage">
+        mypage
       </NavLink>
     </nav>
   );
