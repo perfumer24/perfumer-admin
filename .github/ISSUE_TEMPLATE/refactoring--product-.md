@@ -1,6 +1,6 @@
 ---
-name: refacotor [product]
-about: refacotor 이슈를 위한 템플릿
+name: refactoring [product]
+about: refactoring 이슈를 위한 템플릿
 title: refactoring [product] issue
 labels: "\U0001F9F0 Refactor"
 assignees: mattt0204
