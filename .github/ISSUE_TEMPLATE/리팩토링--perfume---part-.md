@@ -1,22 +1,20 @@
 ---
 name: 리팩토링 [Perfume - part]
-about: 리팩토링용 이슈 템플릿
+about: 리팩토링 이슈를 위한 템플릿
 title: refactoring [part] issue
 labels: "\U0001F9F0 Refactor"
 assignees: mattt0204
 
 ---
 
-# 😎 이슈 내용
+##  😎 이슈 내용
 
-## 왜 이렇게 리팩토링하나요?
-
-# :fire: 수정 사항
+## :fire: 수정 사항
 
 - [ ] 
 - [ ] 
 
-## ✨ 기대 결과
+## ❓ 왜 이렇게 리팩토링하나요?
 
 ## 📸 레퍼런스
 
