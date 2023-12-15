@@ -1,16 +1,15 @@
-import { Accord } from "./Accord";
-import { Brand } from "./Brand";
-import { Fragrance } from "./Fragrance";
-import { Perfume } from "./Perfume";
-import { PerfumePrice } from "./PerfumePrice";
-
 export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
 export interface Database {
   public: {
     Tables: {
       accord: {
-        Row: Accord;
+        Row: {
+          created_at: string;
+          id: string;
+          ko_name: string | null;
+          updated_at: string | null;
+        };
         Insert: {
           created_at?: string;
           id?: string;
@@ -26,7 +25,13 @@ export interface Database {
         Relationships: [];
       };
       brand: {
-        Row: Brand;
+        Row: {
+          created_at: string;
+          en_name: string | null;
+          id: string;
+          ko_name: string | null;
+          updated_at: string | null;
+        };
         Insert: {
           created_at?: string;
           en_name?: string | null;
@@ -44,7 +49,12 @@ export interface Database {
         Relationships: [];
       };
       fragrance: {
-        Row: Fragrance;
+        Row: {
+          created_at: string;
+          id: number;
+          ko_name: string | null;
+          updated_at: string | null;
+        };
         Insert: {
           created_at?: string;
           id?: number;
@@ -60,7 +70,22 @@ export interface Database {
         Relationships: [];
       };
       perfume: {
-        Row: Perfume;
+        Row: {
+          accord_join_id: number | null;
+          base_notes: number[] | null;
+          brand_id: string | null;
+          created_at: string;
+          description: string | null;
+          en_name: string | null;
+          id: string;
+          img_urls: string[] | null;
+          ko_name: string | null;
+          middle_notes: number[] | null;
+          oil_amount_per_alcohol: string | null;
+          perfume_accord_join_id: string | null;
+          top_notes: number[] | null;
+          updated_at: string | null;
+        };
         Insert: {
           accord_join_id?: number | null;
           base_notes?: number[] | null;
@@ -79,7 +104,7 @@ export interface Database {
         };
         Update: {
           accord_join_id?: number | null;
-          base_notes?: Json[] | null;
+          base_notes?: number[] | null;
           brand_id?: string | null;
           created_at?: string;
           description?: string | null;
@@ -87,7 +112,7 @@ export interface Database {
           id?: string;
           img_urls?: string[] | null;
           ko_name?: string | null;
-          middle_notes?: string[] | null;
+          middle_notes?: number[] | null;
           oil_amount_per_alcohol?: string | null;
           perfume_accord_join_id?: string | null;
           top_notes?: number[] | null;
@@ -150,7 +175,14 @@ export interface Database {
         ];
       };
       perfume_price: {
-        Row: PerfumePrice;
+        Row: {
+          created_at: string;
+          id: number;
+          perfume_id: string | null;
+          price: number | null;
+          updated_at: string | null;
+          volume: string | null;
+        };
         Insert: {
           created_at?: string;
           id?: number;
