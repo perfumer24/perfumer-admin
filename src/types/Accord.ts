@@ -1,6 +1,3 @@
-export interface Accord {
-  created_at: string;
-  id: string;
-  ko_name: string | null;
-  updated_at: string | null;
-}
+import { Database } from "@/types/database";
+
+export interface AccordGetDTO extends Database["public"]["Tables"]["accord"]["Row"] {}
