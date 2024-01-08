@@ -61,7 +61,7 @@ export default function AuthPage() {
           </button>
         </form>
         <div>
-          <h2>아직 회원이 아니신가요?</h2>
+          <span className="text-3xl font-bold">아직 회원이 아니신가요?</span>
           <Link to={paths.signUp}>회원가입페이지로 이동</Link>
         </div>
       </main>
