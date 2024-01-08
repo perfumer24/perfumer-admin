@@ -6,15 +6,22 @@ import PerfumePage from "./pages/PerfumePage";
 import BrandPage from "./pages/BrandPage";
 import AccordPage from "./pages/AccordPage";
 import FragrancePage from "./pages/FragrancePage";
+import SignUpPage from "./pages/SignUpPage";
+
+export const paths = {
+  root: "/",
+  perfume: "/perfume",
+  signUp: "/sign-up",
+};
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: paths.root,
     element: <App />,
     children: [
       { index: true, element: <PerfumePage /> },
       {
-        path: "/perfume",
+        path: paths.perfume,
         element: <PerfumePage />,
       },
       {
@@ -35,5 +42,9 @@ export const router = createBrowserRouter([
       },
     ],
     errorElement: <ErrorPage />,
+  },
+  {
+    path: paths.signUp,
+    element: <SignUpPage />,
   },
 ]);
