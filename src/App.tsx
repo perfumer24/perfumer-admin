@@ -5,7 +5,7 @@ import AuthPage from "./pages/AuthPage";
 
 export default function App() {
   // 로그인 여부에 따라 login vs Outlet
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   if (isLoggedIn)
     return (
       <>
