@@ -1,3 +1,4 @@
+import { paths } from "@/router";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -17,7 +18,7 @@ export default function SignUpPage() {
         </form>
         <div>
           <h2>이미 회원이신가요?</h2>
-          <Link to="/">로그인 페이지로 이동</Link>
+          <Link to={paths.root}>로그인 페이지로 이동</Link>
         </div>
       </main>
     </div>

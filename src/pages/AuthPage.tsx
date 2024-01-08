@@ -1,3 +1,4 @@
+import { paths } from "@/router";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -21,7 +22,7 @@ export default function AuthPage() {
         </form>
         <div>
           <h2>아직 회원이 아니신가요?</h2>
-          <Link to="/sign-up">회원가입페이지로 이동</Link>
+          <Link to={paths.signUp}>회원가입페이지로 이동</Link>
         </div>
       </main>
     </div>
