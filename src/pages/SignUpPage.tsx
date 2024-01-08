@@ -1,3 +1,4 @@
+import AuthButton from "@/components/AuthButton";
 import { ALLOWED_EMAILS } from "@/config";
 import useSupabase from "@/hooks/useSupabase";
 import { paths } from "@/router";
@@ -56,9 +57,7 @@ export default function SignUpPage() {
             value={password}
             onChange={handlePasswordChange}
           />
-          <button type="submit" onClick={handleSubmit}>
-            회원가입 완료
-          </button>
+          <AuthButton text="회원가입" handleSubmit={handleSubmit} />
         </form>
         <div>
           <h2>이미 회원이신가요?</h2>
