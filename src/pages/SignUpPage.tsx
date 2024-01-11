@@ -2,14 +2,31 @@ import AuthButton from "@/components/AuthButton";
 import { ALLOWED_EMAILS } from "@/config";
 import useSupabase from "@/hooks/useSupabase";
 import { paths } from "@/router";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const client = useSupabase();
+  const supabase = useSupabase();
   // useAuth로 리팩토링
+  const navigate = useNavigate();
+  const [session, setSession] = useState(null);
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      console.log("session", session);
+      setSession(session);
+    });
+  }, [supabase]);
+
+  if (session) {
+    navigate("/");
+  }
+
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
@@ -21,7 +38,7 @@ export default function SignUpPage() {
     const isInvalidEmail = !ALLOWED_EMAILS.includes(email);
     if (isInvalidEmail) return;
 
-    const { data, error } = await client.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: { emailRedirectTo: "http://localhost:5173" },
@@ -33,12 +50,14 @@ export default function SignUpPage() {
   };
 
   return (
-    <div>
-      <div>
-        <h1>회원가입</h1>
-      </div>
-      <main>
-        <form action="submit">
+    <div className="flex h-screen w-screen flex-col items-center justify-center">
+      <h1 className="w-448px prose-2xl text-center">회원가입 페이지</h1>
+      <main className="w-448px px-40px py-32px h-80 bg-gray-200">
+        <form
+          action="submit"
+          className="flex h-full w-full flex-col justify-around"
+        >
+          <p>Email</p>
           <label htmlFor="email"></label>
           <input
             type="email"
@@ -47,7 +66,9 @@ export default function SignUpPage() {
             placeholder="이메일을 입력해주세요."
             value={email}
             onChange={handleEmailChange}
+            className="input input-bordered w-full"
           />
+          <p>Password</p>
           <label htmlFor="password"></label>
           <input
             type="password"
@@ -56,13 +77,16 @@ export default function SignUpPage() {
             placeholder="비밀번호를 입력해주세요."
             value={password}
             onChange={handlePasswordChange}
+            className="input input-bordered w-full"
           />
-          <AuthButton text="회원가입" handleSubmit={handleSubmit} />
+
+          <div className="flex justify-between">
+            <Link to={paths.root} className="btn btn-link">
+              이미 회원이신가요?
+            </Link>
+            <AuthButton text="회원가입" handleSubmit={handleSubmit} />
+          </div>
         </form>
-        <div>
-          <h2>이미 회원이신가요?</h2>
-          <Link to={paths.root}>로그인 페이지로 이동</Link>
-        </div>
       </main>
     </div>
   );
