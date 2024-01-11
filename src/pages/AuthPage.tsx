@@ -33,12 +33,14 @@ export default function AuthPage() {
   };
 
   return (
-    <div>
-      <div>
-        <h1>admin이시라면 로그인 하세요</h1>
-      </div>
-      <main>
-        <form action="submit">
+    <div className="flex h-screen w-screen flex-col items-center justify-center">
+      <h1 className="w-448px prose-2xl text-center">로그인 페이지</h1>
+      <main className="w-448px px-40px py-32px h-80 bg-gray-200">
+        <form
+          action="submit"
+          className="flex h-full w-full flex-col justify-around"
+        >
+          <p>Email</p>
           <label htmlFor="email"></label>
           <input
             type="email"
@@ -47,7 +49,9 @@ export default function AuthPage() {
             placeholder="이메일을 입력해주세요."
             value={email}
             onChange={handleEmailChange}
+            className="input input-bordered w-full"
           />
+          <p>Password</p>
           <label htmlFor="password"></label>
           <input
             type="password"
@@ -56,13 +60,15 @@ export default function AuthPage() {
             placeholder="비밀번호를 입력해주세요."
             value={password}
             onChange={handlePasswordChange}
+            className="input input-bordered w-full"
           />
-          <AuthButton text="로그인" handleSubmit={handleSubmit} />
+          <div className="flex justify-between">
+            <Link to={paths.signUp} className="btn btn-link">
+              Join Us
+            </Link>
+            <AuthButton text="Login" handleSubmit={handleSubmit} />
+          </div>
         </form>
-        <div>
-          <span className="text-3xl font-bold">아직 회원이 아니신가요?</span>
-          <Link to={paths.signUp}>회원가입페이지로 이동</Link>
-        </div>
       </main>
     </div>
   );
