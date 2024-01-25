@@ -5,10 +5,6 @@ import { paths } from "@/router";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// ui 만들기
-// 이메일, 비밀번호로 form으로 로그인 후,
-// 중간에 edge function으로 우리가 제한하는 것을 검증
-
 export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,8 +30,8 @@ export default function AuthPage() {
 
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center">
-      <h1 className="w-448px prose-2xl text-center">로그인 페이지</h1>
-      <main className="w-448px px-40px py-32px h-80 bg-gray-200">
+      <h1 className="prose-2xl w-448px text-center">로그인 페이지</h1>
+      <main className="h-80 w-448px bg-gray-200 px-40px py-32px">
         <form
           action="submit"
           className="flex h-full w-full flex-col justify-around"
