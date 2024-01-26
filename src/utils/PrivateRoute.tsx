@@ -1,4 +1,5 @@
-import { getTokenFromLocalStorage } from "./getTokenFromLocalStorage";
+import { useUserSession } from "@/hooks/useUserSession";
+import AuthPage from "@/pages/AuthPage";
 
 const PrivateRoute = ({
   LazyComponent,
@@ -6,9 +7,13 @@ const PrivateRoute = ({
   isAuthRequired?: boolean;
   LazyComponent?: React.LazyExoticComponent<() => JSX.Element>;
 }): React.ReactElement => {
-  const token = getTokenFromLocalStorage();
+  const session = useUserSession();
+  if (!session) {
+    return <AuthPage />;
+  }
 
-  return token ? <LazyComponent /> : <div>로그인이 필요합니다</div>;
+  return <LazyComponent />;
 };
 
 export default PrivateRoute;
+ㅅ;
