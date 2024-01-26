@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import AuthPage from "./pages/AuthPage";
-import useSupabase from "./hooks/useSupabase";
+import AuthPage from "./AuthPage";
+import useSupabase from "../hooks/useSupabase";
+import PerfumePage from "./PerfumePage";
 
 export default function App() {
   const [session, setSession] = useState(null);
   const supabase = useSupabase();
+  console.log("실행");
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -22,8 +22,7 @@ export default function App() {
   if (session)
     return (
       <>
-        <NavBar />
-        <Outlet />
+        <PerfumePage />
       </>
     );
 

@@ -59,7 +59,7 @@ export default function AuthPage() {
             className="input input-bordered w-full"
           />
           <div className="flex justify-between">
-            <Link to={paths.signUp} className="btn btn-link">
+            <Link to="/sign-up" className="btn btn-link">
               Join Us
             </Link>
             <AuthButton text="Login" handleSubmit={handleSubmit} />

@@ -81,7 +81,7 @@ export default function SignUpPage() {
           />
 
           <div className="flex justify-between">
-            <Link to={paths.root} className="btn btn-link">
+            <Link to="/" className="btn btn-link">
               이미 회원이신가요?
             </Link>
             <AuthButton text="회원가입" handleSubmit={handleSubmit} />
