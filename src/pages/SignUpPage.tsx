@@ -51,8 +51,8 @@ export default function SignUpPage() {
 
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center">
-      <h1 className="w-448px prose-2xl text-center">회원가입 페이지</h1>
-      <main className="w-448px px-40px py-32px h-80 bg-gray-200">
+      <h1 className="prose-2xl w-448px text-center">회원가입 페이지</h1>
+      <main className="h-80 w-448px bg-gray-200 px-40px py-32px">
         <form
           action="submit"
           className="flex h-full w-full flex-col justify-around"
@@ -81,7 +81,7 @@ export default function SignUpPage() {
           />
 
           <div className="flex justify-between">
-            <Link to={paths.root} className="btn btn-link">
+            <Link to="/" className="btn btn-link">
               이미 회원이신가요?
             </Link>
             <AuthButton text="회원가입" handleSubmit={handleSubmit} />
