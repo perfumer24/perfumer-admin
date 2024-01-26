@@ -1,4 +1,4 @@
-// import { getUserId } from "./getUserId";
+import { getTokenFromLocalStorage } from "./getTokenFromLocalStorage";
 
 const PrivateRoute = ({
   LazyComponent,
@@ -6,10 +6,9 @@ const PrivateRoute = ({
   isAuthRequired?: boolean;
   LazyComponent?: React.LazyExoticComponent<() => JSX.Element>;
 }): React.ReactElement => {
-  console.log("PrivateRoute");
-  // 인증 여부 확인
+  const token = getTokenFromLocalStorage();
 
-  return <LazyComponent />;
+  return token ? <LazyComponent /> : <div>로그인이 필요합니다</div>;
 };
 
 export default PrivateRoute;
