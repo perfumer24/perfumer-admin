@@ -1,10 +1,12 @@
+import NavBar from "@/components/NavBar";
 import React from "react";
 
 export default function PerfumePage() {
   return (
     <div>
-      <div class="overflow-x-auto">
-        <table class="table">
+      <NavBar />
+      <div className="overflow-x-auto">
+        <table className="table">
           <thead>
             <tr>
               <th>
@@ -23,7 +25,7 @@ export default function PerfumePage() {
             </tr>
           </thead>
           <tbody>
-            <tr class="">
+            <tr className="">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
@@ -62,7 +64,7 @@ export default function PerfumePage() {
               <td>바로가기</td>
               <td>2022</td>
             </tr>
-            <tr class="">
+            <tr className="">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
@@ -101,7 +103,7 @@ export default function PerfumePage() {
               <td>바로가기</td>
               <td>2022</td>
             </tr>
-            <tr class="">
+            <tr className="">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
@@ -140,7 +142,7 @@ export default function PerfumePage() {
               <td>바로가기</td>
               <td>2022</td>
             </tr>
-            <tr class="">
+            <tr className="">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
@@ -179,7 +181,7 @@ export default function PerfumePage() {
               <td>바로가기</td>
               <td>2022</td>
             </tr>
-            <tr class="bg-base-56">
+            <tr className="bg-base-56">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
