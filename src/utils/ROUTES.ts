@@ -1,5 +1,5 @@
 import React from "react";
-export const ROUTES = ["App", "SignUp", "Perfume"];
+export const ROUTES = ["App", "SignUp", "Perfume", "Brand", "Accord"];
 
 type LazyRouteType = {
   index: boolean;
@@ -24,6 +24,16 @@ export const routeConfig: {
   Perfume: {
     index: false,
     path: "/perfume",
+    isAuthRequired: true,
+  },
+  Brand: {
+    index: false,
+    path: "/brand",
+    isAuthRequired: true,
+  },
+  Accord: {
+    index: false,
+    path: "/accord",
     isAuthRequired: true,
   },
 };
