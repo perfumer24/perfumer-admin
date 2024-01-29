@@ -16,19 +16,13 @@ export default function NavBar() {
       }}
     >
       <NavLink style={highlight} to="/">
-        home
+        Perfume
       </NavLink>
       <NavLink style={highlight} to="/brand">
         brand
       </NavLink>
       <NavLink style={highlight} to="/accord">
         향조(accord)
-      </NavLink>
-      <NavLink style={highlight} to="/fragrance">
-        향료(fragrance)
-      </NavLink>
-      <NavLink style={highlight} to="/mypage">
-        mypage
       </NavLink>
     </nav>
   );
