@@ -1,11 +1,11 @@
 import NavBar from "@/components/NavBar";
 import React from "react";
 
-export default function BrandPage() {
+export default function AccordPage() {
   return (
-    <div>
+    <>
       <NavBar />
-      BRAND
-    </div>
+      accord향조
+    </>
   );
 }
